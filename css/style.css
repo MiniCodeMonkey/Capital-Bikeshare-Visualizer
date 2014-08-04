@@ -1,0 +1,198 @@
+html, body, #map {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#map label { width: auto; display:inline; }
+#map img { max-width: none; }
+
+body {
+    font-family: Helvetica, Verdana, sans-serif;
+}
+
+#loading {
+    display: none;
+}
+
+#loginbox {
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    padding: 8px;
+    position: absolute;
+    z-index: 9999;
+    left: 50%;
+    bottom: 20px;
+    width: 546px;
+    margin-left: -273px;
+}
+
+#loading {
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    padding: 0 8px 8px 8px;
+    position: absolute;
+    z-index: 9999;
+    left: 50%;
+    top: 10px;
+    width: 300px;
+    margin-left: -150px;
+}
+
+#boxes {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+#boxes h2 {
+    font-size: 16px;
+}
+
+#boxes h3 {
+    font-size: 12px;
+    margin-top: 0;
+}
+
+#infobox {
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    padding: 0 8px 8px 8px;
+    width: 300px;
+    min-height: 100px;
+}
+
+#stationbox, #popularstations {
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    padding: 0 8px 8px 8px;
+    width: 300px;
+    min-height: 100px;
+    display: none;
+}
+
+#routebox {
+    position: absolute;
+    z-index: 9999;
+    left: 50%;
+    top: 50%;
+    width: 900px;
+    height: 600px;
+    margin: -300px 0 0 -450px;
+    padding: 0 8px 8px 8px;
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+#routebox h2 {
+    text-align: center;
+}
+
+#routebox h2 i {
+    display: block;
+}
+
+#stationbox div, #routebox div {
+    float: left;
+}
+
+#stationbox div p, #routebox div p {
+    height: 74px;
+}
+
+#stationbox div.short p, #routebox div.short p {
+    height: 40px;
+    font-size: 48px;
+    line-height: 46px;
+}
+
+#routebox div.medium p {
+    height: 40px;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+#popularstations {
+    display: block;
+}
+
+#popularstations ul {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+#globalstats {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    z-index: 9999;
+}
+
+.stat-container > div {
+    width: 130px;
+    font-size: 12px;
+    text-align: center;
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    margin: 0 14px 20px 0;
+    padding: 2px;
+}
+
+.stat-container > div i {
+    display: block;
+}
+
+.stat-container > div p {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.stat-container > div span {
+    font-size: 10px;
+    font-size: italic;
+    display: block;
+}
+
+.stat-container > div p span {
+    font-size: 10px;
+    display: block;
+}
+
+#timelinechart {
+    width: 900px;
+    height: 340px;
+    display: block;
+}

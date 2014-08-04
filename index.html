@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+        <title>Capital Bikeshare Trip Statistics</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript" src="js/map.js"></script>
+        <script type="text/javascript">
+        google.load('visualization', '1', {packages: ['annotatedtimeline']});
+        google.load('maps', '3', {other_params:'sensor=false'});
+        </script>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+	</head>
+<body>
+
+<div id="loginbox">
+    <form id="login" class="form-inline">
+        <fieldset>
+            <legend>Visualize my trips</legend>
+            <input type="text" name="username" id="username" placeholder="Bikeshare username" class="form-control" />
+            <input type="password" name="password" id="password" placeholder="Bikeshare password" class="form-control" />
+            <input type="submit" class="btn btn-primary" value="Show my trip map!" />
+        </fieldset>
+    </form>
+</div>
+
+<div id="loading">
+    <i class="fa fa-spinner fa-spin fa-2x pull-left"></i>
+    Loading bike rental history...<br />
+    Hold on tight... It may take several minutes depending on your number of rentals.
+</div>
+
+<div id="boxes">
+    <div id="infobox">
+        <h2>Trip statistics for <a href="http://capitalbikeshare.com" target="_blank">Capital Bikeshare</a></h2>
+        <p>This little app pulls rentals from the Capital Bikeshare member area to visualize your trip history.</p>
+        <p>Default data is provided by <a href="http://twitter.com/mjwhansen" target="_blank">@mjwhansen</a> and gives an awesome overview of her 1000+ trips.</p>
+        <p><i class="fa fa-hand-up"></i> Click on a marker to view station details.</p>
+        <p>Designed and developed by <a href="http://twitter.com/MathiasHansen" target="_blank">@MathiasHansen</a> of <a href="http://engagedc.com" target="_blank">Engage</a></p>
+    </div>
+
+    <div id="popularstations" class="stat-container">
+        <button type="button" class="close">×</button>
+        <h2>Most frequently used stations</h2>
+        <ul></ul>
+    </div>
+
+    <div id="stationbox" class="stat-container">
+        <button type="button" class="close">×</button>
+        <h2>Station name</h2>
+        <div class="last-time">
+            <p></p>
+            <span>Last trip</span>
+            <i class="fa fa-share-alt fa-2x"></i>
+        </div>
+
+        <div class="first-time">
+            <p></p>
+            <span>First trip</span>
+            <i class="fa fa-trophy fa-2x"></i>
+        </div>
+
+        <div class="trips-count short">
+            <p></p>
+            <span>Trips to/from this station</span>
+            <i class="fa fa-exchange fa-2x"></i>
+        </div>
+
+        <span style="display: block; clear: both;"></span>
+    </div>
+</div>
+
+<div id="routebox" class="stat-container">
+    <button type="button" class="close">×</button>
+    <h2>Route name</h2>
+    <div class="last-time medium">
+        <p></p>
+        <span>Last trip</span>
+        <i class="fa fa-share-alt fa-2x"></i>
+    </div>
+
+    <div class="first-time medium">
+        <p></p>
+        <span>First trip</span>
+        <i class="fa fa-trophy fa-2x"></i>
+    </div>
+
+    <div class="trips-count short">
+        <p></p>
+        <span>Trips to/from this station</span>
+        <i class="fa fa-exchange fa-2x"></i>
+    </div>
+
+    <div class="average-trip medium">
+        <p></p>
+        <span>Average trip duration</span>
+        <i class="fa fa-retweet fa-2x"></i>
+    </div>
+
+    <div class="fa fastest-trip medium">
+        <p></p>
+        <span>Fastest trip</span>
+        <i class="fa fa-bolt fa-2x"></i>
+    </div>
+
+    <div class="slowest-trip medium">
+        <p></p>
+        <span>Slowest trip</span>
+        <i class="fa fa-road fa-2x"></i>
+    </div>
+
+    <span style="display: block; clear: both;"></span>
+    <span id="timelinechart"></span>
+</div>
+
+<div id="globalstats" class="stat-container">
+    <div id="last-station">
+        <p></p>
+        <span>Last used station</span>
+        <i class="fa fa-share-alt fa-2x"></i>
+    </div>
+
+    <div id="first-station">
+        <p></p>
+        <span>First used station</span>
+        <i class="fa fa-trophy fa-2x"></i>
+    </div>
+
+    <div id="average-trip-duration">
+        <p></p>
+        <span>Average trip duration</span>
+        <i class="fa fa-time fa-2x"></i>
+    </div>
+
+    <div id="longest-trip">
+        <p></p>
+        <span>Longest trip</span>
+        <i class="fa fa-road fa-2x"></i>
+    </div>
+
+    <div id="fastest-trip">
+        <p></p>
+        <span>Fastest trip</span>
+        <i class="fa fa-bolt fa-2x"></i>
+    </div>
+
+    <div id="average-per-day">
+        <p></p>
+        <span>Average trips per day</span>
+        <i class="fa fa-retweet fa-2x"></i>
+    </div>
+</div>
+
+<div id="map"></div>
+
+</body>
+</html>
