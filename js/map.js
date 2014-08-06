@@ -1,4 +1,4 @@
-var BASE_URL = 'http://localhost:8000';
+var BASE_URL = 'http://localhost:8080';
 
 var map;
 var paths = {}, tempPaths = {};
@@ -112,7 +112,7 @@ var showDemoData = function () {
 
 	$.ajax({
         type: "GET",
-        url: BASE_URL + "/demo.json",
+        url: BASE_URL + "/demo",
         dataType: 'json',
         async: true,
         success: function(data) {
