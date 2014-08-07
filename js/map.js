@@ -1,5 +1,3 @@
-var BASE_URL = 'http://localhost:8080';
-
 var map;
 var paths = {}, tempPaths = {};
 var markers = {};
@@ -112,7 +110,7 @@ var showDemoData = function () {
 
 	$.ajax({
         type: "GET",
-        url: BASE_URL + "/demo",
+        url: "/demo",
         dataType: 'json',
         async: true,
         success: function(data) {
@@ -126,9 +124,9 @@ var login = function(username, password)
 {
 	$.ajax({
         type: "GET",
-        url: BASE_URL + "/rentals",
+        url: "/rentals",
         dataType: 'json',
-        async: true,
+        async: false,
         username: username,
         password: password,
         success: function(data) {
@@ -141,6 +139,15 @@ var login = function(username, password)
                 showStations(data);
             }
         }
+    }).fail(function (response) {
+    	$("#loading").hide();
+        $("#login").show();
+
+    	if (response.status == 401) {
+    		alert('Invalid username/password, please try again.');
+    	} else {
+    		alert('An unknown error occurred');
+    	}
     });
 
 	$("#login").hide();

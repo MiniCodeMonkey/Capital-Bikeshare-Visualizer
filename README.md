@@ -6,8 +6,7 @@ This is a simple html/css/js web app with no server-side component.
 
 ## Using
 
-* Set up and configure [Capital-Bikeshare-API](https://github.com/MiniCodeMonkey/Capital-Bikeshare-API)
-* Update the `BASE_URL` variable in `js/map.js` to point to the URL where you set up the API.
+* Set up and configure [Capital-Bikeshare-API](https://github.com/MiniCodeMonkey/Capital-Bikeshare-API) on the same hostname.
 * You're good to go!
 
 ## Notes
