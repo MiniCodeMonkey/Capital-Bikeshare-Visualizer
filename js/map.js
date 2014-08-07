@@ -8,7 +8,7 @@ var markerRed, markerShadow;
 $(document).ready(function($) {
 	initializeMap();
 
-	$("#login").submit(function() {
+	$("#loginbox").submit(function() {
 		login($("#username").val(), $("#password").val());
 		return false;
 	});
@@ -122,6 +122,9 @@ var showDemoData = function () {
 
 var login = function(username, password)
 {
+	$("#loginbox").hide();
+    $("#loading").show();
+
 	$.ajax({
         type: "GET",
         url: "/rentals",
@@ -130,28 +133,24 @@ var login = function(username, password)
         username: username,
         password: password,
         success: function(data) {
-            $("#loading").hide();
-
             if (data.error) {
                 alert(data.error);
-                $("#login").show();
+                $("#loginbox").show();
             } else {
                 showStations(data);
             }
         }
     }).fail(function (response) {
-    	$("#loading").hide();
-        $("#login").show();
+        $("#loginbox").show();
 
     	if (response.status == 401) {
     		alert('Invalid username/password, please try again.');
     	} else {
     		alert('An unknown error occurred');
     	}
+    }).always(function() {
+    	$("#loading").hide();
     });
-
-	$("#login").hide();
-    $("#loading").show();
 }
 
 var initializeMap = function()
