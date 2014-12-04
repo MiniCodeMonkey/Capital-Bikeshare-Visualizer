@@ -12,7 +12,7 @@
         google.load('maps', '3', {other_params:'sensor=false'});
         </script>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">
 	</head>
 <body>
@@ -44,13 +44,11 @@
     </div>
 
     <div id="popularstations" class="stat-container">
-        <button type="button" class="close">×</button>
         <h2>Most frequently used stations</h2>
         <ul></ul>
     </div>
 
     <div id="stationbox" class="stat-container">
-        <button type="button" class="close">×</button>
         <h2>Station name</h2>
         <div class="last-time">
             <p></p>
@@ -74,8 +72,7 @@
     </div>
 </div>
 
-<div id="routebox" class="stat-container">
-    <button type="button" class="close">×</button>
+<div id="routebox" class="stat-container"
     <h2>Route name</h2>
     <div class="last-time medium">
         <p></p>
@@ -101,7 +98,7 @@
         <i class="fa fa-retweet fa-2x"></i>
     </div>
 
-    <div class="fa fastest-trip medium">
+    <div class="fastest-trip medium">
         <p></p>
         <span>Fastest trip</span>
         <i class="fa fa-bolt fa-2x"></i>
@@ -133,7 +130,7 @@
     <div id="average-trip-duration">
         <p></p>
         <span>Average trip duration</span>
-        <i class="fa fa-time fa-2x"></i>
+        <i class="fa fa-clock fa-2x"></i>
     </div>
 
     <div id="longest-trip">
@@ -152,6 +149,12 @@
         <p></p>
         <span>Average trips per day</span>
         <i class="fa fa-retweet fa-2x"></i>
+    </div>
+
+    <div id="total-trips">
+        <p></p>
+        <span>Total trips</span>
+        <i class="fa fa-bar-chart fa-2x"></i>
     </div>
 </div>
 

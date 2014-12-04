@@ -89,6 +89,7 @@ var calculateGlobalStats = function(rentals)
 	$('#average-trip-duration p').html(formatTime(Math.round(averageDuration)));
 	$('#longest-trip p').html(formatTime(longestDuration));
 	$('#fastest-trip p').html(formatTime(shortestDuration));
+	$('#total-trips p').html(rentals.length);
 
 	// Average number of trips per day
 	var startDate = rentals[rentals.length - 1].start_date;
