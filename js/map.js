@@ -8,7 +8,7 @@ var markerRed, markerShadow;
 $(document).ready(function($) {
 	initializeMap();
 
-	$("#loginbox").submit(function() {
+	$("#login").submit(function() {
 		login($("#username").val(), $("#password").val());
 		return false;
 	});
